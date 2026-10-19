@@ -26,11 +26,20 @@ public class PlayerRunState : State
 
     public override void Update()
     {
-       // Input.GetAxis("Mouse X") * sensitivity;
-        //plrObj.transform.position = Input.GetAxis("Mouse Y") * sensitivity;
+        float horizontal = Input.GetAxisRaw("Horizontal");
+        float vertical = Input.GetAxisRaw("Vertical");
         
 
+        player.moveDir = new Vector3(horizontal, 0f, vertical);//.normalized;
+        player.rb.linearVelocity += player.moveDir * player.moveSpeed * Time.deltaTime;
 
+        Debug.Log("player.rb.linearVelocity: " + player.rb.linearVelocity);
+        Debug.Log("player.moveDir  player.moveSpeed " + player.moveDir + player.moveSpeed);
+
+        if (player.rb.linearVelocity.magnitude < 0.1)
+        {
+            sm.ChangeState(sm.playerIdleState);
+        }
     }
 
     public override void OnTriggerEnter(Collider collision)
@@ -41,4 +50,5 @@ public class PlayerRunState : State
     public override void FixedUpdate()
     {
     }
+
 }

@@ -1,16 +1,24 @@
 using Unity.AI.Navigation.LowLevel;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.InputSystem;
 
 public class PlayerScript : MonoBehaviour
 {
     StateMachine sm;
+
+    public GameObject cineCam;
+    public float moveSpeed = 10f;
+    public Rigidbody rb;
+    
+    public Vector3 moveDir;
 
     void Start()
     {
         sm = new StateMachine(this); //"this" means - pass a reference of this script (player script) to the statemachine
         sm.Init(sm.playerIdleState); //this will be the first state to run
         //Cursor.lockState = CursorLockMode.Locked;
+        
     }
     private void Update()
     {

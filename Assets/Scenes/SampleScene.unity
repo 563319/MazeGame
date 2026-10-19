@@ -318,8 +318,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.22975299, y: -0.0000000024416238, z: 5.763893e-10, w: 0.973249}
-  m_LocalPosition: {x: 0, y: 2, z: -2}
+  m_LocalRotation: {x: 0.18910755, y: -7.8557356e-16, z: 1.5128765e-16, w: 0.9819564}
+  m_LocalPosition: {x: 0, y: 2.2, z: -3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -570,6 +570,7 @@ GameObject:
   - component: {fileID: 634685876}
   - component: {fileID: 634685875}
   - component: {fileID: 634685874}
+  - component: {fileID: 634685877}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -597,9 +598,9 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
-  m_Height: 2
+  m_Height: 1
   m_Direction: 1
-  m_Center: {x: 0, y: 1, z: 0}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!114 &634685875
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -612,6 +613,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d1675eeec4cd7045914e3810babefc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerScript
+  cineCam: {fileID: 1456427516}
+  moveSpeed: 10
+  rb: {fileID: 634685877}
+  moveDir: {x: 0, y: 0, z: 0}
 --- !u!4 &634685876
 Transform:
   m_ObjectHideFlags: 0
@@ -629,6 +634,33 @@ Transform:
   - {fileID: 545406886}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &634685877
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 634685873}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 80
+  m_CollisionDetection: 0
 --- !u!1 &759514086
 GameObject:
   m_ObjectHideFlags: 0
@@ -1228,14 +1260,14 @@ MonoBehaviour:
   Radius: 5
   Orbits:
     Top:
-      Radius: 1
-      Height: 2
-    Center:
       Radius: 2
-      Height: 1
+      Height: 2.2
+    Center:
+      Radius: 3
+      Height: 1.2
     Bottom:
-      Radius: 1
-      Height: -0.5
+      Radius: 2
+      Height: -0.7
     SplineCurvature: 0.5
   RecenteringTarget: 2
   HorizontalAxis:
@@ -1319,8 +1351,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1456427516}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.22975296, y: -0.0000000024416236, z: 5.763892e-10, w: 0.973249}
-  m_LocalPosition: {x: 0, y: 2, z: -2}
+  m_LocalRotation: {x: 0.18910752, y: -7.6336965e-16, z: 3.599256e-17, w: 0.9819564}
+  m_LocalPosition: {x: 0, y: 2.2, z: -3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

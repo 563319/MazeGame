@@ -12,8 +12,7 @@ public abstract class State
     protected StateMachine sm;
 
     //player vars
-    public GameObject cineCam;
-    public GameObject plrObj;
+   
     //enemy vars
 
     // base constructor
@@ -29,8 +28,7 @@ public abstract class State
     {
         this.player = player;
         this.sm = sm;
-        this.cineCam = GameObject.FindWithTag("CineCam");
-        this.plrObj = GameObject.FindWithTag("Player");
+        
         // this.anim = enemy.GetComponentInChildren<Animator>();
         //this.nav = enemy.GetComponent<NavMeshAgent>();
         
@@ -40,6 +38,7 @@ public abstract class State
     //methods that can be overriden by each state
     public virtual void Enter() { }
     public virtual void Update() { }
+    public virtual void LateUpdate() { }
     public virtual void FixedUpdate() { }
     public virtual void Exit() { }
     public virtual void OnCollisionEnter(Collision collision) { }
