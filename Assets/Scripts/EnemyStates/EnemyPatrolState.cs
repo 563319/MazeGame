@@ -1,21 +1,20 @@
-
 //This is a derived class of State
 //This means it inherits fields and methods from State.cs
 
 using UnityEngine;
 
-public class PlayerIdleState : State
+public class EnemyPatrolState : State
 {
     //running speed var for example
 
-    public PlayerIdleState(PlayerScript player, StateMachine sm) : base(player, sm)
+    public EnemyPatrolState(EnemyScript enemy, StateMachine sm) : base(enemy, sm)
     {
     }
 
     public override void Enter()
     {
         base.Enter();
-        Debug.Log("entering idle state");
+        Debug.Log("enemy entering patrol state");
     }
 
     public override void Exit()

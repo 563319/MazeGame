@@ -9,7 +9,7 @@ public class EnemyScript : MonoBehaviour
     void Start()
     {
         sm = new StateMachine(this); //"this" means - pass a reference of this script (player script) to the statemachine
-        //sm.Init(sm.patrolState); //this will be the first state to run
+        sm.Init(sm.enemyPatrolState); //this will be the first state to run
 
     }
     private void Update()

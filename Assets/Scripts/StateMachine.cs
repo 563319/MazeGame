@@ -14,6 +14,14 @@ public class StateMachine
     //public AttackState attackState;
     //public PatrolState patrolState;
 
+    //player states
+    public PlayerIdleState playerIdleState;
+    public PlayerRunState playerRunState;
+    //public PlayerRunState playerRunState;
+    //enemy states
+    public EnemyIdleState enemyIdleState;
+    public EnemyPatrolState enemyPatrolState;
+    public EnemyAttackState enemyAttackState;
 
     //constructor
     public StateMachine(EnemyScript enemy)            //enemy
@@ -23,6 +31,10 @@ public class StateMachine
         //attackState = new AttackState(enemy, this);
         //patrolState = new PatrolState(enemy, this);
 
+        enemyIdleState = new EnemyIdleState(enemy, this);
+        enemyPatrolState = new EnemyPatrolState(enemy, this);
+        enemyAttackState = new EnemyAttackState(enemy, this);
+
     }
     public StateMachine(PlayerScript player)         //player
     {
@@ -31,6 +43,8 @@ public class StateMachine
         //attackState = new AttackState(enemy, this);
         //patrolState = new PatrolState(enemy, this);
 
+        playerIdleState = new PlayerIdleState(player, this);
+        playerRunState = new PlayerRunState(player, this);
     }
 
     public void Init(State startingState)

@@ -11,6 +11,10 @@ public abstract class State
     protected PlayerScript player;
     protected StateMachine sm;
 
+    //player vars
+    public GameObject cineCam;
+    public GameObject plrObj;
+    //enemy vars
 
     // base constructor
     public State(EnemyScript enemy, StateMachine sm)
@@ -25,8 +29,11 @@ public abstract class State
     {
         this.player = player;
         this.sm = sm;
-       // this.anim = enemy.GetComponentInChildren<Animator>();
+        this.cineCam = GameObject.FindWithTag("CineCam");
+        this.plrObj = GameObject.FindWithTag("Player");
+        // this.anim = enemy.GetComponentInChildren<Animator>();
         //this.nav = enemy.GetComponent<NavMeshAgent>();
+        
     }
     
 
@@ -43,4 +50,6 @@ public abstract class State
     //Put methods that you wish to share between other states here
     //Set them to be public
 
+
+    
 }

@@ -4,18 +4,18 @@
 
 using UnityEngine;
 
-public class EnemyIdleState : State
+public class PlayerIdleState : State
 {
     //running speed var for example
 
-    public EnemyIdleState(EnemyScript enemy, StateMachine sm) : base(enemy, sm)
+    public PlayerIdleState(PlayerScript player, StateMachine sm) : base(player, sm)
     {
     }
 
     public override void Enter()
     {
         base.Enter();
-        Debug.Log("entering idle state");
+        Debug.Log(" player entering idle state");
     }
 
     public override void Exit()
@@ -27,7 +27,7 @@ public class EnemyIdleState : State
 
     public override void Update()
     {
-       
+
 
 
     }
