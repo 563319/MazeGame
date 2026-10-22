@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 3
   tags:
   - CineCam
+  - Pellet
+  - Dot
   layers:
   - Default
   - TransparentFX
