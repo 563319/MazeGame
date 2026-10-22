@@ -27,6 +27,7 @@ public class PlayerIdleState : State
 
     public override void Update()
     {
+        /*
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
 
@@ -41,6 +42,7 @@ public class PlayerIdleState : State
         {
             sm.ChangeState(sm.playerRunState);
         }
+        */
 
     }
 

@@ -7,16 +7,21 @@ public class PlayerScript : MonoBehaviour
 {
     StateMachine sm;
 
-    public GameObject cineCam;
-    public float moveSpeed = 10f;
-    public Rigidbody rb;
+    public Transform cam;
+    public float speed = 6f;
+    //public Rigidbody rb;
+    public CharacterController controller;
+    public float turnSmoothTime = 0.1f;
+    public float turnSmoothVelocity;
+    public GameObject plr;
     
-    public Vector3 moveDir;
+    //public Vector3 moveDir;
 
     void Start()
     {
         sm = new StateMachine(this); //"this" means - pass a reference of this script (player script) to the statemachine
-        sm.Init(sm.playerIdleState); //this will be the first state to run
+        //sm.Init(sm.playerIdleState); //this will be the first state to run
+        sm.Init(sm.playerRunState);
         //Cursor.lockState = CursorLockMode.Locked;
         
     }
