@@ -2,6 +2,7 @@
 //This means it inherits fields and methods from State.cs
 
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyPatrolState : State
 {
@@ -28,8 +29,15 @@ public class EnemyPatrolState : State
 
     public override void Update()
     {
+        //look around for the player randomly
+        //i need to add loads of points around the level and put them in an array and choose one at random if a path can made then set the destination to it
 
 
+
+        //if player in agro radius go to attack (sees the player)
+
+
+        //enemy.nav.destination = player.plr.transform.position;
 
     }
 

@@ -7,6 +7,14 @@ public class EnemyScript : MonoBehaviour
     StateMachine sm;
     public GameManagerData gm;
     public Animator anim;
+
+    //nav stuff
+    public NavMeshAgent nav;
+    public float agroRadius = 10f;
+    public float attackRadius= 2f;
+
+
+    //
     void Start()
     {
         sm = new StateMachine(this); //"this" means - pass a reference of this script (player script) to the statemachine

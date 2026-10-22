@@ -15,8 +15,8 @@ public class EnemyAttackState : State
     {
         base.Enter();
         Debug.Log("enemy entering attack state");
-        enemy.anim.SetBool("isDefault", false);
-        enemy.anim.SetBool("isAttacking", true);
+        enemy.anim.SetBool("isDefault", true);
+        enemy.anim.SetBool("isAttacking", false);
     }
 
     public override void Exit()
@@ -28,9 +28,13 @@ public class EnemyAttackState : State
 
     public override void Update()
     {
+        //chase player
+        //if player in attack radius change animation 
 
-
-
+        //enemy.anim.SetBool("isDefault", true);
+        //enemy.anim.SetBool("isAttacking", false);
+        
+        //if player not in agro radius go to patrol
     }
 
     public override void OnTriggerEnter(Collider collision)

@@ -30,7 +30,7 @@ public class EnemyIdleState : State
     public override void Update()
     {
        
-
+        //if player in agro radius go to attack
 
     }
 
