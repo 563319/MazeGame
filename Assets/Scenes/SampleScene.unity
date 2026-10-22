@@ -613,6 +613,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d1675eeec4cd7045914e3810babefc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerScript
+  gm: {fileID: 11400000, guid: 584fb631e912a4fde8039d803c304706, type: 2}
   cam: {fileID: 330585546}
   speed: 6
   controller: {fileID: 634685877}
@@ -826,6 +827,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 603e51987a3d40249999510ad3e5357b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyScript
+  gm: {fileID: 0}
 --- !u!4 &805048829
 Transform:
   m_ObjectHideFlags: 0
