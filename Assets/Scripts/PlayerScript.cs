@@ -7,6 +7,7 @@ public class PlayerScript : MonoBehaviour
 {
     StateMachine sm;
 
+    public GameManagerData gm;
     public Transform cam;
     public float speed = 6f;
     //public Rigidbody rb;

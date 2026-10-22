@@ -1,6 +1,7 @@
 //This is a derived class of State
 //This means it inherits fields and methods from State.cs
 
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerRunState : State
@@ -49,11 +50,23 @@ public class PlayerRunState : State
 
     public override void OnTriggerEnter(Collider collision)
     {
-
+        if (collision.gameObject.CompareTag("Dot"))
+        {
+            Debug.Log("collided with dot");
+            player.gm.score += 10;
+        }
+        if (collision.gameObject.CompareTag("Pellet"))
+        {
+            Debug.Log("collided with pellet");
+            player.gm.score += 50;
+            //player.Destroy(collision.gameObject)
+        }
     }
+    
 
     public override void FixedUpdate()
     {
     }
+    
 
 }
