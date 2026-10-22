@@ -6,6 +6,7 @@ public class EnemyScript : MonoBehaviour
 {
     StateMachine sm;
     public GameManagerData gm;
+    public Animator anim;
     void Start()
     {
         sm = new StateMachine(this); //"this" means - pass a reference of this script (player script) to the statemachine

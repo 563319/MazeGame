@@ -15,6 +15,8 @@ public class EnemyPatrolState : State
     {
         base.Enter();
         Debug.Log("enemy entering patrol state");
+        enemy.anim.SetBool("isDefault", true);
+        enemy.anim.SetBool("isAttacking", false);
     }
 
     public override void Exit()

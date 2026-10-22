@@ -15,6 +15,8 @@ public class EnemyAttackState : State
     {
         base.Enter();
         Debug.Log("enemy entering attack state");
+        enemy.anim.SetBool("isDefault", false);
+        enemy.anim.SetBool("isAttacking", true);
     }
 
     public override void Exit()
