@@ -20,8 +20,8 @@ public class PlayerScript : MonoBehaviour
     void Start()
     {
         sm = new StateMachine(this); //"this" means - pass a reference of this script (player script) to the statemachine
-        //sm.Init(sm.playerIdleState); //this will be the first state to run
-        sm.Init(sm.playerRunState);
+        sm.Init(sm.playerIdleState); //this will be the first state to run
+        //sm.Init(sm.playerRunState);
         //Cursor.lockState = CursorLockMode.Locked;
         
     }
