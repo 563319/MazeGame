@@ -66,12 +66,6 @@ public abstract class State
     }
     public bool AgroSphereCast()
     {
-        /*
-        if (Physics.SphereCast(enemy.transform.position, enemy.agroRadius, Vector3.zero, out RaycastHit hit, 0 ))
-        {
-            
-        }
-        */
         if (Physics.CheckSphere(enemy.transform.position, enemy.agroRadius, LayerMask.GetMask("Player")))
         {
             return true;
@@ -83,13 +77,7 @@ public abstract class State
     }
     public bool AttackSphereCast()
     {
-        /*
-        if (Physics.SphereCast(enemy.transform.position, enemy.agroRadius, Vector3.zero, out RaycastHit hit, 0 ))
-        {
-            
-        }
-        */
-        if (Physics.CheckSphere(enemy.transform.position, enemy.agroRadius, LayerMask.GetMask("Player")))
+        if (Physics.CheckSphere(enemy.transform.position, enemy.attackRadius, LayerMask.GetMask("Player")))
         {
             return true;
         }
