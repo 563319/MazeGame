@@ -27,6 +27,7 @@ public class PlayerRunState : State
 
     public override void Update()
     {
+        PlayerTorchUpdate();
         //movement
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");

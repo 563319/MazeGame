@@ -15,6 +15,8 @@ public class PlayerScript : MonoBehaviour
     public float turnSmoothTime = 0.1f;
     public float turnSmoothVelocity;
     public GameObject plr;
+    public GameObject torch;
+    public bool torchIsOn;
     
     //public Vector3 moveDir;
 
@@ -24,6 +26,7 @@ public class PlayerScript : MonoBehaviour
         sm.Init(sm.playerIdleState); //this will be the first state to run
         //sm.Init(sm.playerRunState);
         //Cursor.lockState = CursorLockMode.Locked;
+        gm.score = 0;
         
     }
     private void Update()

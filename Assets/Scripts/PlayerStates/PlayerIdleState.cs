@@ -27,6 +27,7 @@ public class PlayerIdleState : State
 
     public override void Update()
     {
+        PlayerTorchUpdate();
         //test for input
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");

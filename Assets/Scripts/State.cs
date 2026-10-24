@@ -4,6 +4,7 @@
 
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.InputSystem.Interactions;
 using UnityEngine.UIElements;
 
 public abstract class State
@@ -85,6 +86,16 @@ public abstract class State
         {
             return false;
         }
+    }
+    public void PlayerTorchUpdate()
+    {
+        if(Input.GetKeyDown(KeyCode.F))
+        {
+            player.torchIsOn = !player.torchIsOn;
+            Debug.Log("hit f");
+            player.torch.SetActive(!player.torchIsOn);
+        }
+        
     }
 
     
