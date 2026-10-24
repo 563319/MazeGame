@@ -4,15 +4,16 @@
 
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UIElements;
 
 public abstract class State
 {
     protected EnemyScript enemy;
     protected PlayerScript player;
     protected StateMachine sm;
-
+    
     //player vars
-   
+  
     //enemy vars
 
     // base constructor
@@ -48,7 +49,55 @@ public abstract class State
     //Common Shared Methods
     //Put methods that you wish to share between other states here
     //Set them to be public
+    public void GoToRandomPoint()
+    {
+        //enemy.destPoint
+        if (enemy.points.Count == 0)
+        {
+            return;
+        }
+        
+        int item = Random.Range(0, enemy.points.Count);
+        enemy.destPoint = enemy.points[item];
+        enemy.nav.destination = enemy.destPoint.position;
 
+
+
+    }
+    public bool AgroSphereCast()
+    {
+        /*
+        if (Physics.SphereCast(enemy.transform.position, enemy.agroRadius, Vector3.zero, out RaycastHit hit, 0 ))
+        {
+            
+        }
+        */
+        if (Physics.CheckSphere(enemy.transform.position, enemy.agroRadius, LayerMask.GetMask("Player")))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    public bool AttackSphereCast()
+    {
+        /*
+        if (Physics.SphereCast(enemy.transform.position, enemy.agroRadius, Vector3.zero, out RaycastHit hit, 0 ))
+        {
+            
+        }
+        */
+        if (Physics.CheckSphere(enemy.transform.position, enemy.agroRadius, LayerMask.GetMask("Player")))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 
     
 }

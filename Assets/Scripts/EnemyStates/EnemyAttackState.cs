@@ -2,6 +2,7 @@
 //This means it inherits fields and methods from State.cs
 
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyAttackState : State
 {
@@ -28,13 +29,26 @@ public class EnemyAttackState : State
 
     public override void Update()
     {
+        Debug.Log("remainingDistance: " + enemy.nav.remainingDistance);
         //chase player
+        enemy.nav.destination = enemy.plr.transform.position;
         //if player in attack radius change animation 
-
-        //enemy.anim.SetBool("isDefault", true);
-        //enemy.anim.SetBool("isAttacking", false);
+        if (AttackSphereCast() == true)
+        {
+            enemy.anim.SetBool("isDefault", false);
+            enemy.anim.SetBool("isAttacking", true);
+        }
+        if (AttackSphereCast() == false)
+        {
+            enemy.anim.SetBool("isDefault", true);
+            enemy.anim.SetBool("isAttacking", false);
+        }
         
         //if player not in agro radius go to patrol
+        if (AgroSphereCast() == false)
+        {
+            sm.ChangeState(sm.enemyPatrolState);
+        }
     }
 
     public override void OnTriggerEnter(Collider collision)

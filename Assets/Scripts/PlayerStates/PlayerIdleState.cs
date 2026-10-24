@@ -35,7 +35,7 @@ public class PlayerIdleState : State
         {
             sm.ChangeState(sm.playerRunState);
         }
-        Debug.Log("Idle state");
+        //Debug.Log("Idle state");
     }
 
     public override void OnTriggerEnter(Collider collision)

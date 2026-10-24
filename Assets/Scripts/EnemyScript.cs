@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Unity.AI.Navigation.LowLevel;
 using UnityEngine;
 using UnityEngine.AI;
@@ -7,11 +8,14 @@ public class EnemyScript : MonoBehaviour
     StateMachine sm;
     public GameManagerData gm;
     public Animator anim;
+    public GameObject plr;
 
     //nav stuff
     public NavMeshAgent nav;
     public float agroRadius = 10f;
-    public float attackRadius= 2f;
+    public float attackRadius= 3f; 
+    public List<Transform> points = new List<Transform>();
+    public Transform destPoint;
 
 
     //
@@ -45,4 +49,6 @@ public class EnemyScript : MonoBehaviour
     {
         sm.currentState.OnTriggerExit(collision);
     }
+    
+    
 }
