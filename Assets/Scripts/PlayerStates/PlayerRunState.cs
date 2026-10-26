@@ -55,12 +55,14 @@ public class PlayerRunState : State
         {
             Debug.Log("collided with dot");
             player.gm.score += 10;
+            player.gm.totalCollected += 1;
             GameObject.Destroy(collision.gameObject);
         }
         if (collision.gameObject.CompareTag("Pellet"))
         {
             Debug.Log("collided with pellet");
             player.gm.score += 50;
+            player.gm.totalCollected += 1;
             GameObject.Destroy(collision.gameObject);
         }
     }
