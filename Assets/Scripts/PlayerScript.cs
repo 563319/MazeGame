@@ -16,7 +16,7 @@ public class PlayerScript : MonoBehaviour
     public float turnSmoothVelocity;
     public GameObject plr;
     public GameObject torch;
-    public bool torchIsOn;
+    public bool torchIsOn = true;
     
     //public Vector3 moveDir;
 

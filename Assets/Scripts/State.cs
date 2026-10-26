@@ -91,9 +91,9 @@ public abstract class State
     {
         if(Input.GetKeyDown(KeyCode.F))
         {
-            player.torchIsOn = !player.torchIsOn;
             Debug.Log("hit f");
             player.torch.SetActive(!player.torchIsOn);
+            player.torchIsOn = !player.torchIsOn;
         }
         
     }
