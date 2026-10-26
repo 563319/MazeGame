@@ -1486,8 +1486,8 @@ MonoBehaviour:
   anim: {fileID: 805048831}
   plr: {fileID: 634685873}
   nav: {fileID: 805048830}
-  agroRadius: 10
-  attackRadius: 3
+  agroRadius: 12
+  attackRadius: 6
   points:
   - {fileID: 1701905566}
   - {fileID: 90838492}
@@ -3662,7 +3662,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2127705966
 Transform:
   m_ObjectHideFlags: 0

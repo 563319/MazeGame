@@ -12,8 +12,8 @@ public class EnemyScript : MonoBehaviour
 
     //nav stuff
     public NavMeshAgent nav;
-    public float agroRadius = 10f;
-    public float attackRadius= 5f; 
+    public float agroRadius = 12f;
+    public float attackRadius= 6f; 
     public List<Transform> points = new List<Transform>();
     public Transform destPoint;
 
