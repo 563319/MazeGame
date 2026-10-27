@@ -15,7 +15,7 @@ public class EnemyIdleState : State
     public override void Enter()
     {
         base.Enter();
-        Debug.Log("enemy entering idle state");
+        //Debug.Log("enemy entering idle state");
         enemy.anim.SetBool("isDefault", true);
         enemy.anim.SetBool("isAttacking", false);
     }

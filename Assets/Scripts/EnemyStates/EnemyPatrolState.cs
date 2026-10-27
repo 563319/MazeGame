@@ -1,6 +1,7 @@
 //This is a derived class of State
 //This means it inherits fields and methods from State.cs
 
+using Unity.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -29,7 +30,7 @@ public class EnemyPatrolState : State
 
     public override void Update()
     {
-        Debug.Log("remainingDistance: " + enemy.nav.remainingDistance);
+        //Debug.Log("remainingDistance: " + enemy.nav.remainingDistance);
         //look around for the player randomly
         //i need to add loads of points around the level and put them in an array and choose one at random if a path can made then set the destination to it
         if (!enemy.nav.pathPending && enemy.nav.remainingDistance < 0.5f)
@@ -43,7 +44,10 @@ public class EnemyPatrolState : State
             sm.ChangeState(sm.enemyAttackState);
         }
         //enemy.nav.destination = player.plr.transform.position;
-
+        if (enemy.gm.playerHasWon == true)
+        {
+            sm.ChangeState(sm.enemyIdleState);
+        }
     }
 
     public override void OnTriggerEnter(Collider collision)

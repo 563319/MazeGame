@@ -28,7 +28,17 @@ public class PlayerDeadState : State
 
     public override void Update()
     {
-        
+        //show u died text
+        player.deathText.SetActive(true);
+        //red overlay
+        player.deathRedOverlay.SetActive(true);
+        //show button to return to menu 
+        player.menuButton.SetActive(true);
+        //show button to restart
+        player.restartButton.SetActive(true);
+
+        //death sound
+
     }
 
     public override void OnTriggerEnter(Collider collision)

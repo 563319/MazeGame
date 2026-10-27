@@ -17,6 +17,16 @@ public class PlayerScript : MonoBehaviour
     public GameObject plr;
     public GameObject torch;
     public bool torchIsOn = true;
+    public Vector3 spawnPos;
+
+    //win and death state ui
+    public GameObject winText;
+    public GameObject deathText;
+    public GameObject deathRedOverlay;
+    public GameObject restartButton;
+    public GameObject menuButton;
+
+    ///
     
     //public Vector3 moveDir;
 
@@ -29,6 +39,7 @@ public class PlayerScript : MonoBehaviour
         gm.score = 0;
         gm.totalCollected = 0;
         gm.lives = 3;
+        gm.playerHasWon = false;
         
     }
     private void Update()

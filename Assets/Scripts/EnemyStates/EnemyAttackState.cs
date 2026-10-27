@@ -29,7 +29,7 @@ public class EnemyAttackState : State
 
     public override void Update()
     {
-        Debug.Log("remainingDistance: " + enemy.nav.remainingDistance);
+        //Debug.Log("remainingDistance: " + enemy.nav.remainingDistance);
         //chase player
         enemy.nav.destination = enemy.plr.transform.position;
         //if player in attack radius change animation 
@@ -48,6 +48,10 @@ public class EnemyAttackState : State
         if (AgroSphereCast() == false)
         {
             sm.ChangeState(sm.enemyPatrolState);
+        }
+        if (enemy.gm.playerHasWon == true)
+        {
+            sm.ChangeState(sm.enemyIdleState);
         }
     }
 

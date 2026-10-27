@@ -49,7 +49,7 @@ public class PlayerRunState : State
         {
             sm.ChangeState(sm.playerDeadState);
         }
-        if (player.gm.totalCollected >= 244)
+        if (player.gm.totalCollected >= 244+2)
         {
             sm.ChangeState(sm.playerWinState);
         }
@@ -72,6 +72,17 @@ public class PlayerRunState : State
             player.gm.score += 50;
             player.gm.totalCollected += 1;
             GameObject.Destroy(collision.gameObject);
+        }
+    }
+    public override void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            //enemy damage player
+            Debug.Log("hit enemy");
+            player.gm.lives -= 1;
+            player.plr.transform.position = player.spawnPos;
+            //do red flash
         }
     }
     

@@ -1,6 +1,7 @@
 //This is a derived class of State
 //This means it inherits fields and methods from State.cs
 
+using UnityEditor.Search;
 using UnityEngine;
 
 public class PlayerWinState : State
@@ -26,7 +27,15 @@ public class PlayerWinState : State
 
     public override void Update()
     {
-        
+        player.gm.playerHasWon = true;
+        //display win text
+        player.winText.SetActive(true);
+        //show button to return to menu 
+        player.menuButton.SetActive(true);
+        //show button to restart
+        player.restartButton.SetActive(true);
+
+        //win sound
     }
 
     public override void OnTriggerEnter(Collider collision)
