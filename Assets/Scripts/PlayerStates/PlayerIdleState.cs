@@ -2,6 +2,7 @@
 //This is a derived class of State
 //This means it inherits fields and methods from State.cs
 
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerIdleState : State
@@ -35,6 +36,14 @@ public class PlayerIdleState : State
         if (direction.magnitude >= 0.1f)
         {
             sm.ChangeState(sm.playerRunState);
+        }
+        if (player.gm.lives < 1)
+        {
+            sm.ChangeState(sm.playerDeadState);
+        }
+        if (player.gm.totalCollected >= 244)
+        {
+            sm.ChangeState(sm.playerWinState);
         }
         //Debug.Log("Idle state");
     }

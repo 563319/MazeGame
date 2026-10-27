@@ -4,7 +4,7 @@ using UnityEngine;
 public class GameManagerData : ScriptableObject
 {
     public int score;
-    public int lives;
+    public int lives = 3;
     public int totalCollected;//  244 collected is needed
 
 }

@@ -45,6 +45,14 @@ public class PlayerRunState : State
         {
             sm.ChangeState(sm.playerIdleState);
         }
+        if (player.gm.lives < 1)
+        {
+            sm.ChangeState(sm.playerDeadState);
+        }
+        if (player.gm.totalCollected >= 244)
+        {
+            sm.ChangeState(sm.playerWinState);
+        }
 
         //Debug.Log("run state");
     }

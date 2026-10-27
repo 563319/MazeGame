@@ -28,6 +28,7 @@ public class PlayerScript : MonoBehaviour
         //Cursor.lockState = CursorLockMode.Locked;
         gm.score = 0;
         gm.totalCollected = 0;
+        gm.lives = 3;
         
     }
     private void Update()

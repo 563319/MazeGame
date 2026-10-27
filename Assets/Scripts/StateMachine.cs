@@ -17,6 +17,8 @@ public class StateMachine
     //player states
     public PlayerIdleState playerIdleState;
     public PlayerRunState playerRunState;
+    public PlayerDeadState playerDeadState;
+    public PlayerWinState playerWinState;
     //public PlayerRunState playerRunState;
     //enemy states
     public EnemyIdleState enemyIdleState;
@@ -45,6 +47,8 @@ public class StateMachine
 
         playerIdleState = new PlayerIdleState(player, this);
         playerRunState = new PlayerRunState(player, this);
+        playerDeadState = new PlayerDeadState(player, this);
+        playerWinState = new PlayerWinState(player, this);
     }
 
     public void Init(State startingState)
