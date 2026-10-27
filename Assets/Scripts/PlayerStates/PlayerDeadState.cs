@@ -28,6 +28,7 @@ public class PlayerDeadState : State
 
     public override void Update()
     {
+        player.gm.playerHasLost = true;
         //show u died text
         player.deathText.SetActive(true);
         //red overlay

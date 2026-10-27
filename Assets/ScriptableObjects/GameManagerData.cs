@@ -7,5 +7,6 @@ public class GameManagerData : ScriptableObject
     public int lives = 3;
     public int totalCollected;//  244 collected is needed
     public bool playerHasWon = false;
+    public bool playerHasLost = false;
 
 }

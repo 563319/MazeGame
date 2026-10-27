@@ -1,4 +1,5 @@
 using Unity.AI.Navigation.LowLevel;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.InputSystem;
@@ -7,6 +8,8 @@ public class PlayerScript : MonoBehaviour
 {
     StateMachine sm;
 
+    public Vector3 enemySpawnPoint;
+    public GameObject enemyObj;
     public GameManagerData gm;
     public Transform cam;
     public float speed = 6f;
@@ -40,10 +43,13 @@ public class PlayerScript : MonoBehaviour
         gm.totalCollected = 0;
         gm.lives = 3;
         gm.playerHasWon = false;
+        gm.playerHasWon = false;
+        gm.playerHasLost = false;
         
     }
     private void Update()
     {
+        Debug.Log("player lost = " + gm.playerHasLost);
         sm.Update();
     }
 

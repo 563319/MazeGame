@@ -53,6 +53,11 @@ public class EnemyAttackState : State
         {
             sm.ChangeState(sm.enemyIdleState);
         }
+        if (enemy.gm.playerHasLost == true)
+        {
+           
+            sm.ChangeState(sm.enemyIdleState);
+        }
     }
 
     public override void OnTriggerEnter(Collider collision)

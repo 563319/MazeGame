@@ -1,7 +1,7 @@
 using System.Collections.Generic;
-using Unity.AI.Navigation.LowLevel;
 using UnityEngine;
 using UnityEngine.AI;
+using Vector3 = UnityEngine.Vector3;
 
 public class EnemyScript : MonoBehaviour
 {
@@ -16,9 +16,11 @@ public class EnemyScript : MonoBehaviour
     public float attackRadius= 6f; 
     public List<Transform> points = new List<Transform>();
     public Transform destPoint;
-
-
     //
+   
+
+
+
     void Start()
     {
         sm = new StateMachine(this); //"this" means - pass a reference of this script (player script) to the statemachine

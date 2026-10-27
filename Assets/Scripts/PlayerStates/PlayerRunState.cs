@@ -3,6 +3,7 @@
 
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class PlayerRunState : State
 {
@@ -73,7 +74,20 @@ public class PlayerRunState : State
             player.gm.totalCollected += 1;
             GameObject.Destroy(collision.gameObject);
         }
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            //enemy damage player
+            Debug.Log("hit enemy (run)");
+            player.gm.lives -= 1;
+            player.plr.GetComponent<CharacterController>().enabled = false;
+            player.plr.transform.position = player.spawnPos;
+            player.plr.GetComponent<CharacterController>().enabled = true;
+            //player.enemyObj.transform.position = player.enemySpawnPoint;
+            player.enemyObj.GetComponent<NavMeshAgent>().Warp(player.enemySpawnPoint);
+            //do red flash
+        }
     }
+    /*
     public override void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Enemy"))
@@ -85,6 +99,7 @@ public class PlayerRunState : State
             //do red flash
         }
     }
+    */
     
 
     public override void FixedUpdate()
