@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class MenuUiScript : MonoBehaviour
 {
+    public Animator anim;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -16,7 +17,9 @@ public class MenuUiScript : MonoBehaviour
     }
     public void Play()
     {
-        SceneManager.LoadScene("SampleScene");
+        //SceneManager.LoadScene("SampleScene");
+        //play fadeout aniamtion that will do the above anyway at the end of its anim thingy
+        anim.SetBool("FadeOut", true);
     }
     public void Quit()
     {
