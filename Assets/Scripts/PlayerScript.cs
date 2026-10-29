@@ -29,6 +29,8 @@ public class PlayerScript : MonoBehaviour
     public GameObject restartButton;
     public GameObject menuButton;
 
+    public GameObject lifeLostObj;
+
     ///
     
     //public Vector3 moveDir;

@@ -85,6 +85,8 @@ public class PlayerRunState : State
             //player.enemyObj.transform.position = player.enemySpawnPoint;
             player.enemyObj.GetComponent<NavMeshAgent>().Warp(player.enemySpawnPoint);
             //do red flash
+
+            player.lifeLostObj.GetComponent<LifeLostScript>().StartAnim();
         }
     }
     /*
