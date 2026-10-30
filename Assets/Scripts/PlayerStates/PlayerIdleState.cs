@@ -29,6 +29,7 @@ public class PlayerIdleState : State
 
     public override void Update()
     {
+        MainMenuKeyCheck();
         PlayerTorchUpdate();
         //test for input
         float horizontal = Input.GetAxisRaw("Horizontal");

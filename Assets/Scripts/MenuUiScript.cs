@@ -1,9 +1,12 @@
+using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MenuUiScript : MonoBehaviour
 {
     public Animator anim;
+
+    public GameManagerData gm;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -24,5 +27,11 @@ public class MenuUiScript : MonoBehaviour
     public void Quit()
     {
         Application.Quit();
+    }
+
+    public void SetSense(float sensitivity)
+    {
+        gm.CameraSens = sensitivity;
+        
     }
 }

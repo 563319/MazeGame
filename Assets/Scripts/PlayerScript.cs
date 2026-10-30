@@ -3,6 +3,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerScript : MonoBehaviour
 {
@@ -73,5 +74,13 @@ public class PlayerScript : MonoBehaviour
     void OnTriggerExit(Collider collision)
     {
         sm.currentState.OnTriggerExit(collision);
+    }
+    public void MainMenuKeyCheck()
+    {
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            SceneManager.LoadScene("MainMenu");
+        }
+
     }
 }

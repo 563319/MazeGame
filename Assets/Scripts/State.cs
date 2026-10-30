@@ -5,6 +5,7 @@
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.InputSystem.Interactions;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 public abstract class State
@@ -97,7 +98,14 @@ public abstract class State
         }
         
     }
-    
+    public void MainMenuKeyCheck()
+    {
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            SceneManager.LoadScene("MainMenu");
+        }
+
+    }
 
     
 }

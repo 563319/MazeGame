@@ -27,6 +27,7 @@ public class PlayerWinState : State
 
     public override void Update()
     {
+        MainMenuKeyCheck();
         player.gm.playerHasWon = true;
         //display win text
         player.winText.SetActive(true);

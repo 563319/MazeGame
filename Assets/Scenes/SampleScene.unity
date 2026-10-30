@@ -4134,7 +4134,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: F = LIGHT
+  m_text: 'ESC = MAIN MENU
+
+    F = LIGHT'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
   m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
@@ -4200,7 +4202,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -44.018623, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -18160,7 +18162,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &843549943
 RectTransform:
   m_ObjectHideFlags: 0
@@ -33899,6 +33901,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6ba89fb40c874c2da5f9321abe8b382, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelUiScript
+  axisController: {fileID: 1456427517}
+  gm: {fileID: 11400000, guid: 584fb631e912a4fde8039d803c304706, type: 2}
 --- !u!1001 &1586552907
 PrefabInstance:
   m_ObjectHideFlags: 0

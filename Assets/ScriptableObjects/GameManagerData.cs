@@ -9,4 +9,7 @@ public class GameManagerData : ScriptableObject
     public bool playerHasWon = false;
     public bool playerHasLost = false;
 
+
+    public float CameraSens;
+
 }
