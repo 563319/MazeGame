@@ -13,9 +13,10 @@ public abstract class State
     protected EnemyScript enemy;
     protected PlayerScript player;
     protected StateMachine sm;
+
     
     //player vars
-  
+    protected AudioManagerScript audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManagerScript>();
     //enemy vars
 
     // base constructor
@@ -23,18 +24,12 @@ public abstract class State
     {
         this.enemy = enemy;
         this.sm = sm;
-        //this.anim = enemy.GetComponentInChildren<Animator>();
-       // this.nav = enemy.GetComponent<NavMeshAgent>();
     }
     //player version
     public State(PlayerScript player, StateMachine sm)
     {
         this.player = player;
-        this.sm = sm;
-        
-        // this.anim = enemy.GetComponentInChildren<Animator>();
-        //this.nav = enemy.GetComponent<NavMeshAgent>();
-        
+        this.sm = sm;     
     }
     
 
@@ -95,6 +90,7 @@ public abstract class State
             Debug.Log("hit f");
             player.torch.SetActive(!player.torchIsOn);
             player.torchIsOn = !player.torchIsOn;
+            audioManager.PlaySFX(audioManager.flashLight);
         }
         
     }

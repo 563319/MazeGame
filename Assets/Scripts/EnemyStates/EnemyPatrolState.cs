@@ -16,6 +16,7 @@ public class EnemyPatrolState : State
     public override void Enter()
     {
         base.Enter();
+        audioManager.StopLoopSFX(audioManager.enemyAttacking);
         Debug.Log("enemy entering patrol state");
         enemy.anim.SetBool("isDefault", true);
         enemy.anim.SetBool("isAttacking", false);

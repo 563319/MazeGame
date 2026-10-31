@@ -16,6 +16,7 @@ public class PlayerWinState : State
     {
         base.Enter();
         Debug.Log(" player entering win state");
+        audioManager.PlaySFX(audioManager.win);
     }
 
     public override void Exit()

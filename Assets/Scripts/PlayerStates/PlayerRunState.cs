@@ -63,6 +63,7 @@ public class PlayerRunState : State
     {
         if (collision.gameObject.CompareTag("Dot"))
         {
+            audioManager.PlaySFX(audioManager.collect);
             Debug.Log("collided with dot");
             player.gm.score += 10;
             player.gm.totalCollected += 1;
@@ -70,6 +71,7 @@ public class PlayerRunState : State
         }
         if (collision.gameObject.CompareTag("Pellet"))
         {
+            audioManager.PlaySFX(audioManager.collect);
             Debug.Log("collided with pellet");
             player.gm.score += 50;
             player.gm.totalCollected += 1;
@@ -78,6 +80,8 @@ public class PlayerRunState : State
         if (collision.gameObject.CompareTag("Enemy"))
         {
             //enemy damage player
+            audioManager.PlaySFX(audioManager.lifeLost);
+            player.lifeLostObj.GetComponent<LifeLostScript>().StartAnim();
             Debug.Log("hit enemy (run)");
             player.gm.lives -= 1;
             player.plr.GetComponent<CharacterController>().enabled = false;
@@ -87,7 +91,7 @@ public class PlayerRunState : State
             player.enemyObj.GetComponent<NavMeshAgent>().Warp(player.enemySpawnPoint);
             //do red flash
 
-            player.lifeLostObj.GetComponent<LifeLostScript>().StartAnim();
+            
         }
     }
     /*

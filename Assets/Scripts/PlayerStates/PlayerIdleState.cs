@@ -55,6 +55,8 @@ public class PlayerIdleState : State
         if (collision.gameObject.CompareTag("Enemy"))
         {
             //enemy damage player
+            audioManager.PlaySFX(audioManager.lifeLost);
+            player.lifeLostObj.GetComponent<LifeLostScript>().StartAnim();
             Debug.Log("hit enemy (idle)");
             player.gm.lives -= 1;
             player.plr.GetComponent<CharacterController>().enabled = false;
@@ -63,7 +65,7 @@ public class PlayerIdleState : State
             //player.enemyObj.transform.position = player.enemySpawnPoint;
             player.enemyObj.GetComponent<NavMeshAgent>().Warp(player.enemySpawnPoint);
             //do red flash
-            player.lifeLostObj.GetComponent<LifeLostScript>().StartAnim();
+            
         }
     }
     /*

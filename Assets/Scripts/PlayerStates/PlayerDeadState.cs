@@ -17,6 +17,7 @@ public class PlayerDeadState : State
     {
         base.Enter();
         Debug.Log(" player entering dead state");
+        audioManager.PlaySFX(audioManager.lost);
     }
 
     public override void Exit()

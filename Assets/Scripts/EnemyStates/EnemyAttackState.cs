@@ -15,6 +15,7 @@ public class EnemyAttackState : State
     public override void Enter()
     {
         base.Enter();
+        //audioManager.PlayLoopSFX(audioManager.enemyAttacking);
         Debug.Log("enemy entering attack state");
         enemy.anim.SetBool("isDefault", true);
         enemy.anim.SetBool("isAttacking", false);
@@ -35,11 +36,13 @@ public class EnemyAttackState : State
         //if player in attack radius change animation 
         if (AttackSphereCast() == true)
         {
+            audioManager.PlayLoopSFX(audioManager.enemyAttacking);
             enemy.anim.SetBool("isDefault", false);
             enemy.anim.SetBool("isAttacking", true);
         }
         if (AttackSphereCast() == false)
         {
+            audioManager.StopLoopSFX(audioManager.enemyAttacking);
             enemy.anim.SetBool("isDefault", true);
             enemy.anim.SetBool("isAttacking", false);
         }
