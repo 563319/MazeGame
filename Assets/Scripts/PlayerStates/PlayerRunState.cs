@@ -28,6 +28,7 @@ public class PlayerRunState : State
 
     public override void Update()
     {
+        MainMenuKeyCheck();
         PlayerTorchUpdate();
         //movement
         float horizontal = Input.GetAxisRaw("Horizontal");

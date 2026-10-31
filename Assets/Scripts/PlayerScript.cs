@@ -75,12 +75,4 @@ public class PlayerScript : MonoBehaviour
     {
         sm.currentState.OnTriggerExit(collision);
     }
-    public void MainMenuKeyCheck()
-    {
-        if (Input.GetKey(KeyCode.Escape))
-        {
-            SceneManager.LoadScene("MainMenu");
-        }
-
-    }
 }
