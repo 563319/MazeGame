@@ -3,10 +3,7 @@
 // You can include methods that you want to allow other states to use here
 
 using UnityEngine;
-using UnityEngine.AI;
-using UnityEngine.InputSystem.Interactions;
 using UnityEngine.SceneManagement;
-using UnityEngine.UIElements;
 
 public abstract class State
 {

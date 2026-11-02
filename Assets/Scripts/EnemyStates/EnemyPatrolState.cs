@@ -1,9 +1,9 @@
 //This is a derived class of State
 //This means it inherits fields and methods from State.cs
 
-using Unity.Collections;
+
 using UnityEngine;
-using UnityEngine.UI;
+
 
 public class EnemyPatrolState : State
 {

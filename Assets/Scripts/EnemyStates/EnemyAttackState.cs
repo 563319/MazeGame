@@ -2,7 +2,7 @@
 //This means it inherits fields and methods from State.cs
 
 using UnityEngine;
-using UnityEngine.UI;
+
 
 public class EnemyAttackState : State
 {
